@@ -3,5 +3,13 @@
 import questions from '../questionsDatabase';
 
 export default function handler(req, res) {
-    res.status(200).json(questions[0].convertToObject());
+    const idSelected = +req.query.id;
+    const onlyQuestionOrAnything = questions.filter(question => question.id === idSelected);
+
+    if (onlyQuestionOrAnything.length === 1) {
+        const questionSelected = onlyQuestionOrAnything[0];
+        res.status(200).json(questionSelected.convertToObject());
+    } else {
+        res.status(204).send();
+    }
 };
