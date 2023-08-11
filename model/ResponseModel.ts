@@ -13,6 +13,14 @@ export default class ResponseModel {
         this.#revealed = revealed;
     };
 
+    static right(value: string) {
+        return new ResponseModel(value, true);
+    };
+
+    static wrong(value: string) {
+        return new ResponseModel(value, false);
+    };
+
     get value() {
         return this.#value;
     };
