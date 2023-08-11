@@ -18,6 +18,22 @@ const questions: QuestionModel[] = [
             ResponseModel.right('Abóbora'),
         ],
     ),
+    new QuestionModel(203, 'Qual é o coletivo de cães?',
+        [
+            ResponseModel.wrong('Manada'),
+            ResponseModel.wrong('Alcateia'),
+            ResponseModel.wrong('Rebanho'),
+            ResponseModel.right('Matilha'),
+        ],
+    ),
+    new QuestionModel(204, 'Qual é o triângulo que tem todos os lados diferentes?',
+        [
+            ResponseModel.wrong('Equilátero'),
+            ResponseModel.wrong('Isóceles'),
+            ResponseModel.wrong('Trapézio'),
+            ResponseModel.right('Escaleno'),
+        ],
+    ),
 ];
 
 export default questions;
