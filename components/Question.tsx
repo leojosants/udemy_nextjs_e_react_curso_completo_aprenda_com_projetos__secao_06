@@ -44,7 +44,12 @@ export default function Question(props: QuestionProps) {
     return (
         <div className={styles.question}>
             <Statement text={question.statement} />
-            <Timer duration={10} TimeIsOver={props.timerIsOver} />
+
+            <Timer
+                duration={props.timeToAnswer ?? 10}
+                TimeIsOver={props.timerIsOver}
+            />
+
             {renderAnswers()}
         </div>
     );

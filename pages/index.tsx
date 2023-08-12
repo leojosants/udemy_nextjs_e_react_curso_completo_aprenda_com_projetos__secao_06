@@ -2,7 +2,6 @@ import Question from '../components/Question';
 import QuestionModel from '../model/QuestionModel';
 import ResponseModel from '../model/AnswerModel';
 import { useState } from 'react';
-import Answer from '../components/Answer';
 
 const questionMock = new QuestionModel(1, 'Qual é a sua cor favorita?',
   [
@@ -35,6 +34,7 @@ export default function Home() {
     }}>
       <Question
         value={question}
+        timeToAnswer={5}
         answerProvided={answerProvided}
         timerIsOver={timerIsOver}
       />
