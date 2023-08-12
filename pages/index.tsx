@@ -30,7 +30,7 @@ export default function Home() {
 
       <Quiz
         question={question}
-        lastQuestion={true}
+        lastQuestion={false}
         questionAnswered={questionAnswered}
         goToNextStep={goToNextStep}
       />
