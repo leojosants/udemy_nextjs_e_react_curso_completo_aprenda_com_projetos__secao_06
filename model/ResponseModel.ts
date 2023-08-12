@@ -33,6 +33,10 @@ export default class ResponseModel {
         return this.#revealed;
     };
 
+    toReveal() {
+        return new ResponseModel(this.#value, this.#right, true);
+    };
+
     convertToObject() {
         return {
             value: this.#value,

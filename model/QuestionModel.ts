@@ -42,9 +42,17 @@ export default class QuestionModel {
         return false;
     };
 
-    // toRespondWith(indice: number): QuestionModel {
+    toRespondWith(indice: number): QuestionModel {
+        const hit = this.#answers[indice]?.right;
 
-    // };
+        const answers = this.#answers.map((answer, i) => {
+            const answerSelected = indice === i;
+            const mustReveal = answerSelected || answer.right;
+            return mustReveal ? answer.toReveal() : answer;
+        });
+
+        return new QuestionModel(this.id, this.statement, answers, hit);
+    };
 
     shuffleAnswers(): QuestionModel {
         let mixedAnswers = shuffle(this.#answers);
@@ -54,9 +62,10 @@ export default class QuestionModel {
     convertToObject() {
         return {
             id: this.#id,
+            answered: this.answered,
+            hit: this.#hit,
             statement: this.#statement,
             answers: this.#answers.map(answer => answer.convertToObject()),
-            hit: this.#hit,
         };
     };
 };
