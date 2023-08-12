@@ -1,9 +1,22 @@
 .answer {
     display: flex;
+    min-width: 500px;
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+}
+
+.contentAnswer {
+    position: relative;
+    display: flex;
+    flex: 1;
 }
 
 .front, .back {
+    position: absolute;
     display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 .front {
@@ -30,5 +43,3 @@
     font-size: 1.3rem;
     font-weight: bold;
 }
-
-.contentAnswer {}

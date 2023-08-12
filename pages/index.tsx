@@ -3,7 +3,7 @@ import QuestionModel from '../model/QuestionModel';
 import ResponseModel from '../model/AnswerModel';
 
 export default function Home() {
-  const questionTest = new QuestionModel(1, 'Cor favorita?',
+  const questionTest = new QuestionModel(1, 'Qual é a sua cor favorita?',
     [
       ResponseModel.right('Verde'),
       ResponseModel.right('Vermelha'),
