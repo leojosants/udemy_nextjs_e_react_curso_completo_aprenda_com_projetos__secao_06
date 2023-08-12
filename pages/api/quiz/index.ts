@@ -1,4 +1,4 @@
-import { shuffle } from '../../../functions/arrays';
+import { shuffle } from '../../../functions/arraysFn';
 import questions from '../questionsDatabase';
 
 const index = (req, res) => {

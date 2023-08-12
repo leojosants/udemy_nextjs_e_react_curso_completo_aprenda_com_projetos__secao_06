@@ -1,8 +1,8 @@
 import { QuestionProps } from './interfaces/QuestionProps';
 import styles from '../styles/Question.module.css';
-import Statement from './Statement';
-import Answer from './Answer';
-import Timer from './Timer';
+import Statement from './StatementComponent';
+import Answer from './AnswerComponent';
+import Timer from './TimerComponent';
 
 const letters = [
     {

@@ -1,8 +1,7 @@
-import Question from '../components/Question';
+import { useState } from 'react';
 import QuestionModel from '../model/QuestionModel';
 import ResponseModel from '../model/AnswerModel';
-import { useState } from 'react';
-import Button from '../components/Button';
+import Quiz from '../components/QuizComponent';
 
 const questionMock = new QuestionModel(1, 'Qual é a sua cor favorita?',
   [
@@ -16,15 +15,9 @@ const questionMock = new QuestionModel(1, 'Qual é a sua cor favorita?',
 export default function Home() {
   const [question, setQuestion] = useState(questionMock);
 
-  function answerProvided(indice: number): void {
-    setQuestion(question.toAnswerWith(indice));
-  };
+  function questionAnswered(question: QuestionModel) { };
 
-  function timerIsOver(): void {
-    if (question.notAnswered) {
-      setQuestion(question.toAnswerWith(-1));
-    }
-  };
+  function goToNextStep() { };
 
   return (
     <div style={{
@@ -32,15 +25,15 @@ export default function Home() {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100vh',
+      height: '100vh'
     }}>
-      <Question
-        value={question}
-        timeToAnswer={5}
-        answerProvided={answerProvided}
-        timerIsOver={timerIsOver}
+
+      <Quiz
+        question={question}
+        lastQuestion={true}
+        questionAnswered={questionAnswered}
+        goToNextStep={goToNextStep}
       />
-      <Button text='Próxima pergunta' href='/result' />
     </div>
   );
 };

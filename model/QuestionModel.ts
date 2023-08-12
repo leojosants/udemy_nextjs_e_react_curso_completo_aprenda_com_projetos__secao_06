@@ -1,4 +1,4 @@
-import { shuffle } from "../functions/arrays";
+import { shuffle } from "../functions/arraysFn";
 import AnswerModel from "./AnswerModel";
 
 export default class QuestionModel {
