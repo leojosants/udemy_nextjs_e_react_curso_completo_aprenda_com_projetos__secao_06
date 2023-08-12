@@ -10,10 +10,11 @@ export default function Question(props: QuestionProps) {
         return question.answers.map((answer, i) => {
             return (
                 <Answer
+                    key={i}
                     value={answer}
                     indice={i}
                     letter='A'
-                    letterColor='#F2C866'
+                    backgroundColorLetter='#F2C866'
                 />
             );
         })

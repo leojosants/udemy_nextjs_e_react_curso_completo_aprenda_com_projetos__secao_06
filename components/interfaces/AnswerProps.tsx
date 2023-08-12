@@ -4,5 +4,5 @@ export interface AnswerProps {
     value: AnswerModel;
     indice: number;
     letter: string;
-    letterColor: string;
+    backgroundColorLetter: string;
 }
