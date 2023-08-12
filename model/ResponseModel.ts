@@ -36,8 +36,7 @@ export default class ResponseModel {
     convertToObject() {
         return {
             value: this.#value,
-            // right: this.#right,
-            right: this.#revealed,
+            right: this.#right,
             revealed: this.#revealed,
         };
     };

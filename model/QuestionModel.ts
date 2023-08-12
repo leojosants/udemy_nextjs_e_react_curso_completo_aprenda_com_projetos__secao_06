@@ -1,3 +1,4 @@
+import { shuffle } from "../functions/arrays";
 import ResponseModel from "./ResponseModel";
 
 export default class QuestionModel {
@@ -41,6 +42,15 @@ export default class QuestionModel {
         return false;
     };
 
+    // toRespondWith(indice: number): QuestionModel {
+
+    // };
+
+    shuffleAnswers(): QuestionModel {
+        let mixedAnswers = shuffle(this.#answers);
+        return new QuestionModel(this.#id, this.#statement, mixedAnswers, this.#hit);
+    };
+
     convertToObject() {
         return {
             id: this.#id,
@@ -49,5 +59,4 @@ export default class QuestionModel {
             hit: this.#hit,
         };
     };
-
 };
