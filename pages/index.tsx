@@ -17,6 +17,7 @@ const BASE_URL = 'http://localhost:3000/api';
 export default function Home() {
   const [questionsIds, setQuestionsIds] = useState<number[]>([]);
   const [question, setQuestion] = useState<QuestionModel>(questionMock);
+  const [anwersRight, setAnwersRight] = useState<number>(0);
 
   async function loadQuestionIds() {
     const resp = await fetch(`${BASE_URL}/quiz`);
@@ -40,7 +41,11 @@ export default function Home() {
     questionsIds.length > 0 && loadQuestion(questionsIds[0])
   }, [questionsIds]);
 
-  function questionAnswered(question: QuestionModel) { };
+  function questionAnswered(questionAnswered: QuestionModel) {
+    setQuestion(questionAnswered);
+    const hit = questionAnswered.hit;
+    setAnwersRight(anwersRight + (hit ? 1 : 0));
+  };
 
   function goToNextStep() { };
 
