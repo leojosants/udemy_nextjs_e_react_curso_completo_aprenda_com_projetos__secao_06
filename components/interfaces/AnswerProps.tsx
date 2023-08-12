@@ -5,4 +5,5 @@ export interface AnswerProps {
     indice: number;
     letter: string;
     backgroundColorLetter: string;
+    answerProvided: (indice: number) => void;
 }

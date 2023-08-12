@@ -5,7 +5,7 @@ export default function Answer(props: AnswerProps) {
     const answer = props.value;
 
     return (
-        <div className={styles.answer}>
+        <div className={styles.answer} onClick={() => props.answerProvided(props.indice)}>
             <div className={styles.contentAnswer}>
 
                 <div className={styles.front}>

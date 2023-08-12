@@ -34,6 +34,7 @@ export default function Question(props: QuestionProps) {
                     indice={i}
                     letter={letters[i].value}
                     backgroundColorLetter={letters[i].color}
+                    answerProvided={props.answerProvided}
                 />
             );
         })
