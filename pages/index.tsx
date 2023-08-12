@@ -5,10 +5,10 @@ import { useState } from 'react';
 
 const questionMock = new QuestionModel(1, 'Qual é a sua cor favorita?',
   [
-    ResponseModel.right('Verde'),
-    ResponseModel.right('Vermelha'),
-    ResponseModel.right('Azul'),
-    ResponseModel.wrong('Preta'),
+    ResponseModel.wrong('Verde'),
+    ResponseModel.wrong('Vermelha'),
+    ResponseModel.wrong('Azul'),
+    ResponseModel.right('Preta'),
   ],
 );
 
@@ -16,7 +16,6 @@ export default function Home() {
   const [question, setQuestion] = useState(questionMock);
 
   function answerProvided(indice: number): void {
-    console.log(indice);
     setQuestion(question.toAnswerWith(indice));
   };
 
