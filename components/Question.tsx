@@ -2,6 +2,7 @@ import { QuestionProps } from './interfaces/QuestionProps';
 import styles from '../styles/Question.module.css';
 import Statement from './Statement';
 import Answer from './Answer';
+import Timer from './Timer';
 
 const letters = [
     {
@@ -43,6 +44,7 @@ export default function Question(props: QuestionProps) {
     return (
         <div className={styles.question}>
             <Statement text={question.statement} />
+            <Timer duration={10} TimeIsOver={props.timerIsOver} />
             {renderAnswers()}
         </div>
     );

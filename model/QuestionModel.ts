@@ -42,6 +42,10 @@ export default class QuestionModel {
         return false;
     };
 
+    get notAnswered() {
+        return !this.answered;
+    };
+
     toAnswerWith(indice: number): QuestionModel {
         const hit = this.#answers[indice]?.right;
 
