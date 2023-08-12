@@ -1,6 +1,6 @@
 import Question from '../components/Question';
 import QuestionModel from '../model/QuestionModel';
-import ResponseModel from '../model/ResponseModel';
+import ResponseModel from '../model/AnswerModel';
 
 export default function Home() {
   const questionTest = new QuestionModel(1, 'Cor favorita?',

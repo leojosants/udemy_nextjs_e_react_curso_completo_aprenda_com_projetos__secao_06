@@ -1,4 +1,4 @@
-export default class ResponseModel {
+export default class AnswerModel {
     #value: string;
     #right: boolean;
     #revealed: boolean;
@@ -14,11 +14,11 @@ export default class ResponseModel {
     };
 
     static right(value: string) {
-        return new ResponseModel(value, true);
+        return new AnswerModel(value, true);
     };
 
     static wrong(value: string) {
-        return new ResponseModel(value, false);
+        return new AnswerModel(value, false);
     };
 
     get value() {
@@ -34,7 +34,7 @@ export default class ResponseModel {
     };
 
     toReveal() {
-        return new ResponseModel(this.#value, this.#right, true);
+        return new AnswerModel(this.#value, this.#right, true);
     };
 
     convertToObject() {

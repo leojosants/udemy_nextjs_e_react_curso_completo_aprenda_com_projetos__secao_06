@@ -1,16 +1,16 @@
 import { shuffle } from "../functions/arrays";
-import ResponseModel from "./ResponseModel";
+import AnswerModel from "./AnswerModel";
 
 export default class QuestionModel {
     #id: number;
     #statement: string;
-    #answers: ResponseModel[];
+    #answers: AnswerModel[];
     #hit: boolean;
 
     constructor(
         id: number,
         statement: string,
-        answers: ResponseModel[],
+        answers: AnswerModel[],
         hit = false,
     ) {
         this.#id = id;
@@ -42,7 +42,7 @@ export default class QuestionModel {
         return false;
     };
 
-    toRespondWith(indice: number): QuestionModel {
+    toAnswerWith(indice: number): QuestionModel {
         const hit = this.#answers[indice]?.right;
 
         const answers = this.#answers.map((answer, i) => {
