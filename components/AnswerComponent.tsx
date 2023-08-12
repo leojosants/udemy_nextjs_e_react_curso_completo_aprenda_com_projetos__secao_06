@@ -3,40 +3,38 @@ import { AnswerProps } from './interfaces/AnswerProps';
 
 export default function Answer(props: AnswerProps) {
     const answer = props.value;
+    const answerRevealed = answer.revealed ? styles.answerRevealed : '';
 
     return (
         <div className={styles.answer} onClick={() => props.answerProvided(props.indice)}>
-            <div className={styles.contentAnswer}>
-                {
-                    !answer.revealed ? (
-                        <div className={styles.front}>
-                            <div className={styles.letter}
-                                style={{ backgroundColor: props.backgroundColorLetter }}>
-                                {props.letter}
-                            </div>
+            <div className={`${answerRevealed} ${styles.contentAnswer}`}>
 
-                            <div className={styles.value}>
-                                {answer.value}
+                <div className={styles.front}>
+                    <div className={styles.letter}
+                        style={{ backgroundColor: props.backgroundColorLetter }}>
+                        {props.letter}
+                    </div>
+
+                    <div className={styles.value}>
+                        {answer.value}
+                    </div>
+                </div>
+
+                <div className={styles.back}>
+                    {
+                        answer.right ? (
+                            <div className={styles.right}>
+                                <div>A resposta certa é...</div>
+                                <div className={styles.value}>{answer.value}</div>
                             </div>
-                        </div>
-                    ) : (
-                        <div className={styles.back}>
-                            {
-                                answer.right ? (
-                                    <div className={styles.right}>
-                                        <div>A resposta certa é...</div>
-                                        <div className={styles.value}>{answer.value}</div>
-                                    </div>
-                                ) : (
-                                    <div className={styles.wrong}>
-                                        <div>A resposta informada está errada...</div>
-                                        <div className={styles.value}>{answer.value}</div>
-                                    </div>
-                                )
-                            }
-                        </div>
-                    )
-                }
+                        ) : (
+                            <div className={styles.wrong}>
+                                <div>A resposta informada está errada...</div>
+                                <div className={styles.value}>{answer.value}</div>
+                            </div>
+                        )
+                    }
+                </div>
             </div>
         </div>
     );
