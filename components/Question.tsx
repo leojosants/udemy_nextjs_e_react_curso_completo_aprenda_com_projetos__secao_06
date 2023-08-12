@@ -1,12 +1,13 @@
 import { QuestionProps } from './interfaces/QuestionProps';
 import styles from '../styles/Question.module.css';
+import Statement from './Statement';
 
 export default function Question(props: QuestionProps) {
     const question = props.value;
 
     return (
         <div className={styles.question}>
-            <h1>Question</h1>
+            <Statement text={question.statement} />
         </div>
     );
 };

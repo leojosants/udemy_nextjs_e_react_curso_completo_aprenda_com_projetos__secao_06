@@ -3,7 +3,7 @@ import QuestionModel from '../model/QuestionModel';
 import ResponseModel from '../model/ResponseModel';
 
 export default function Home() {
-  const questionTest = new QuestionModel(1, 'Cor favorta?',
+  const questionTest = new QuestionModel(1, 'Cor favorita?',
     [
       ResponseModel.right('Verde'),
       ResponseModel.right('Vermelha'),
@@ -13,6 +13,13 @@ export default function Home() {
   );
 
   return (
-    <Question value={questionTest} />
+    <div style={{
+      display: 'flex',
+      height: '100vh',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
+      <Question value={questionTest} />
+    </div>
   );
 };
