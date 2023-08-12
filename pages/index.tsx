@@ -41,10 +41,8 @@ export default function Home() {
   };
 
   function nextQuestionId() {
-    if (question) {
-      const nextIndice = questionsIds.indexOf(question.id) + 1;
-      return questionsIds[nextIndice];
-    }
+    const nextIndice = questionsIds.indexOf(question.id) + 1;
+    return questionsIds[nextIndice];
   };
 
   function goToNextStep() {
@@ -66,12 +64,11 @@ export default function Home() {
     });
   };
 
-  return (
+  return question ? (
     <Quiz
       question={question}
       lastQuestion={nextQuestionId() === undefined}
       questionAnswered={questionAnswered}
-      goToNextStep={goToNextStep}
-    />
-  );
+      goToNextStep={goToNextStep} />
+  ) : false;
 };
