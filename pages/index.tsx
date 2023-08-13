@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 
 // const BASE_URL = 'http://localhost:3000/api';
-const BASE_URL = 'https://udemy-nextjs-e-react-curso-completo-apren-git-c2007b-leojosants.vercel.app/api';
+const BASE_URL = 'https://udemy-nextjs-e-react-curso-completo-aprenda-com-proj-j653t3m6q.vercel.app/api';
 
 export default function Home() {
   const router = useRouter();
